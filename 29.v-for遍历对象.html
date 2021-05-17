@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <ul>
+          <li v-for='items in names'>{{items}}</li>
+      </ul>
+      <ul>
+        <li v-for='(item,index) in names'>{{index+1}}. {{item}}</li>
+    </ul>
+    <!-- 1.在遍历对象时，如果只是获取一个值，你们获取到的就是value -->
+    <ul>
+        <li v-for='item in info'>
+            {{item}}
+
+        </li>
+    </ul>
+    <!-- 获取key,和value -->
+    <ul>
+        <li v-for='(value,key) in info'>
+            {{key}}
+
+        </li>
+    </ul>
+    </div>
+<script src="./vue.js"></script>
+<script>
+const app=new Vue({
+    el:'#app',
+    data:{
+        message:'你好',
+        url:'<a href="http://www.baidu.com">百度一下</a>',
+        names:['shy','kobe','niho'],
+        info:{
+            name:'kobe',
+            age:19,
+            height:1.88
+
+        }
+
+    }
+    
+})
+
+</script>
+</body>
+</html>

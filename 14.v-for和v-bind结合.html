@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for='(item,index) in movies'>{{item}}</li>
+        </ul>
+    </div>
+<script src="./vue.js"></script>
+<script>
+const app=new Vue({
+    el:'#app',
+    data:{
+       movies:['海王','海尔兄弟','火影忍者','进击的巨人']
+    }
+    
+})
+
+</script>
+</body>
+</html>

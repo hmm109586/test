@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div @click='divClick'>
+            aaa
+            <!--1 .stop的使用 -->
+            <button @click.stop="btnClick">按钮</button>
+
+            <!-- 2 .prevent的使用 -->
+            <br>
+            <br>
+           
+        </div>
+        <form action="百度">
+            <input type="submit" value="提交" @click.prevent='submitClick'>
+        </form>
+        <!-- 3监听某个键盘的点击 -->
+        <input type="text" @keyup.enter="keyUp">
+        <!-- <cpn @click.native="cpnClick"> -->
+
+
+        <!-- </cpn> -->
+        <!-- 4.once修饰符的使用 -->
+        <button @click.once="btn2Click">按钮2</button>
+       
+    </div>
+<script src="./vue.js"></script>
+<script>
+const app=new Vue({
+    el:'#app',
+    data:{
+        message:'你好',
+        url:'<a href="http://www.baidu.com">百度一下</a>'
+
+    },
+    methods:{
+        btnClick(){
+            console.log("btnClick")
+        },
+        divClick(){
+            console.log("divClick")
+        },
+        submitClick(){
+            console.log('submit')
+
+        },
+        keyUp(){
+            console.log('up')
+
+        },
+        btn2Click(){
+            console.log('按钮2')
+        }
+
+
+    }
+    
+})
+
+</script>
+</body>
+</html>

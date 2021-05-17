@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for='item in letters'>{{item}}</li>
+        </ul>
+        <button @click='btnClick'>按钮</button>
+        
+    </div>
+<script src="./vue.js"></script>
+<script>
+const app=new Vue({
+    el:'#app',
+    data:{
+        message:'你好',
+        url:'<a href="http://www.baidu.com">百度一下</a>',
+        letters:['a','h','c','d']
+    },
+    methods:{
+        btnClick(){
+            //1.push方法
+            //this.letters.push('aaaa')
+            //通过索引值改变数组中的元素
+            //this.letters[0]='bbb';
+            //2.pop(),删除数组中最后一个元素
+           // this.letters.pop();
+           //3.shift()删除数组中第一个元素
+          // this.letters.shift();
+           //4.unshift()数组中第一个元素添加
+          // this.letters.unshift('aaa','hhh');
+           //5.splice()作用：删除元素、插入元素，替换元素
+           //删除元素，第二个参数传入要删除几个元素
+           //替换元素，第二个参数是要替换的的个数，后面是用于替换前面的元素
+           //splice(start)
+           //6..sort()排序
+           //7.reverse()反转
+           //8.set(要修改的对象，索引值，修改后的值)
+
+           this.letters.reverse()
+           Vue.set(this.letters,0,'bbbbbbb')
+        }
+        
+
+
+    }
+    
+})
+
+</script>
+</body>
+</html>

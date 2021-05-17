@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div id="app" v-cloak>
+        <!-- 1.修饰符lazy -->
+        <input type="text" v-model.lazy='message'>
+        <h2>{{message}}</h2>
+        <!--2.修饰符 number -->
+        <input type="number" v-model.number='age'>
+        <h2>
+            {{typeof age}}
+        </h2>
+        <!-- 3.修饰符trim -->
+        <input type="text" v-model.trim='name'>
+        <br>
+        请输入您的名字{{name}}
+
+       
+    </div>
+<script src="./vue.js"></script>
+<script>
+    //在vue解析之前，div中有一个属性v-cloak
+     //在vue解析之后，div中没有一个属性v-cloak
+    setTimeout(() => {
+        const app=new Vue({
+    el:'#app',
+    data:{
+        message:'你好',
+        url:'<a href="http://www.baidu.com">百度一下</a>',
+        age:0,
+        name:''
+
+    }
+    
+})
+    }, 1000);
+
+
+</script>
+</body>
+</html>

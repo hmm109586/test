@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+        <h2>
+            当前计数：{{counter}}
+        </h2>
+      <button @click="add">+</button>
+      <button @click="sub">-</button>
+
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        const obj={
+            counter:0
+        }
+        const app=new Vue({
+            el:'#app',//决定管理谁
+            data:obj,//对应数据
+            methods:{
+                add:function(){
+                    console.log('add执行');
+                    this.counter++;
+
+                },
+                sub(){
+                    console.log('sub执行');
+                    this.counter--;
+
+                }
+            },
+            created:function(){
+                console.log('created');
+            },
+            mounted:function(){
+                console.log('mounted');
+            }
+        })
+    </script>
+   
+    
+</body>
+</html>

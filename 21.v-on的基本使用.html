@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <div id="app">
+        <h2>
+            当前计数：{{counter}}
+        </h2>
+      <button @click="add">+</button>
+      <button @click="sub">-</button>
+      <button @click="btn3Click(123,$event)">按钮</button>
+
+
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+        //在事件定义时，写函数省略了小括号，但是方法本身需要一个参数的，这个时候，Vue会默认
+        //将浏览器产生的event事件作为参数传到方法中
+
+        //在调用方式时，如何手动的获取到浏览器参数的event对象：$event
+        const obj={
+            counter:0
+        }
+        const app=new Vue({
+            el:'#app',//决定管理谁
+            data:obj,//对应数据
+            methods:{
+                add:function(){
+                    console.log('add执行');
+                    this.counter++;
+
+                },
+                sub(){
+                    console.log('sub执行');
+                    this.counter--;
+
+                }
+            },
+            created:function(){
+                console.log('created');
+            },
+            mounted:function(){
+                console.log('mounted');
+            }
+        })
+    </script>
+   
+    
+</body>
+</html>

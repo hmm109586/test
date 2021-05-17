@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       //es5之前if,for没有块级作用域的概念，所以在很多时候，
+       //我们必须借助function的作用域来解决应用外面变量的问题 
+       //ES6中，加了let ,if和for有作用域了
+        //1.变量作用域
+        //没有块级作用域引起的问题：if块级
+         //没有块级作用域引起的问题：for块级
+         //为什么闭包可以解决这个问题：因为函数是一个作用域
+
+
+         //建议在开发中优先使用const，只有需要改变某个标志符时才使用let
+         //const修饰的标识符被赋值之后，不能修改
+         //在使用const定义标识符，必须进行赋值
+         //常量的含义是指向的对象不能修改，但是可以改变对象内部的属性
+
+        //
+
+        const obj={
+            neme:'coder',
+            age:18,
+            run:function(){
+                console.log ('run')
+            }
+        }//{}就是对象字面量
+
+        //1.属性的增强写法
+       // ES5写法
+        const name='coder';
+        const  age=18;
+       // const obj1={
+        //    name:neme,
+         //   age:age
+       // }
+
+       const obj1={
+           name,
+           age
+       }
+       //函数增强写法
+       const obj2={
+           run(){
+
+           },
+           eta(){
+               
+           }
+       }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

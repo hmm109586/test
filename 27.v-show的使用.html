@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- v-if：当条件为false时，包含v-if指令的元素，根本不会存在于dom中
+        v-show: 当条件为false时，包含v-show指令只是给元素添加了一个行内样式：display：none，
+        切换频率高,选v-if
+        只有一次切换,选v-show
+    -->
+      
+        <h2 v-if="isShow">{{message}}</h2>
+        <h2 v-show="isShow">{{message}}</h2>
+       
+       
+    </div>
+<script src="./vue.js"></script>
+<script>
+const app=new Vue({
+    el:'#app',
+    data:{
+        message:'你好',
+        url:'<a href="http://www.baidu.com">百度一下</a>',
+        isShow:true
+
+    }
+    
+})
+
+</script>
+</body>
+</html>

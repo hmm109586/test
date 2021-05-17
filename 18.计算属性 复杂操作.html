@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       <h2>
+          <h2>{{getFullName()}}</h2> 
+          <h2>{{fullName}}</h2> 
+          <h2>
+              总价格：{{totalPrice}}
+          </h2>
+       </h2>
+    </div>
+<script src="./vue.js"></script>
+<script>
+const app=new Vue({
+    el:'#app',
+    data:{
+        message:'你好',
+        url:'<a href="http://www.baidu.com">百度一下</a>',
+        finalSize:'100px',
+        firstName:'lebron',
+        lastName:'James',
+        books:[
+            {id:100,name:'a',price:119},
+            {id:100,name:'a',price:134},
+            {id:100,name:'a',price:127},
+            {id:100,name:'a',price:89}
+        ]
+
+    },
+    computed:{
+        fullName:function(){
+            return this.firstName+' '+this.lastName
+        },
+        totalPrice:function(){
+         let result=0
+         for (let i=0;i<this.books.length;i++){
+             result+=this.books[i].price
+         }
+         return result
+        }
+
+    },
+    methods:{
+        getFullName(){
+            return this.firstName+' '+this.lastName
+        }
+    }
+    
+})
+
+</script>
+</body>
+</html>
